@@ -1,0 +1,10 @@
+{
+  "name": "rc4-marketplace-backend",
+  "version": "1.0.0",
+  "description": "RC4 Marketplace Backend",
+  "main": "index.js",
+  "repository": "https://github.com/alissayarmantho/rc4-marketplace-backend",
+  "author": "CSC Tech",
+  "license": "MIT",
+  "private": false
+}
