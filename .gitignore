@@ -3,3 +3,6 @@ config/
 
 # Node modules
 node_modules/
+
+# Error logs
+yarn-error.log
