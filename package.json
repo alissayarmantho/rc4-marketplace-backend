@@ -2,9 +2,32 @@
   "name": "rc4-marketplace-backend",
   "version": "1.0.0",
   "description": "RC4 Marketplace Backend",
-  "main": "index.js",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "repository": "https://github.com/alissayarmantho/rc4-marketplace-backend",
   "author": "CSC Tech",
   "license": "MIT",
-  "private": false
+  "private": false,
+  "dependencies": {
+    "body-parser": "^1.19.1",
+    "cors": "^2.8.5",
+    "express": "^4.17.2",
+    "express-validator": "^6.14.0",
+    "fs": "^0.0.1-security",
+    "http": "^0.0.1-security",
+    "http-errors": "^2.0.0",
+    "https": "^1.0.0",
+    "isemail": "^3.2.0",
+    "jsonwebtoken": "^8.5.1",
+    "moment-timezone": "^0.5.34",
+    "mongoose": "^6.1.6",
+    "morgan": "^1.10.0",
+    "nodemailer": "^6.7.2",
+    "path": "^0.12.7",
+    "randomstring": "^1.2.1",
+    "salted-md5": "^4.0.2"
+  }
 }
