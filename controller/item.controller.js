@@ -14,14 +14,14 @@ exports.createItem = async function (req, res, next) {
 
   const item = new Item({
     telegramHandle: req.body.telegramHandle,
-    listingName: req.body.listingName,
-    category: req.body.category,
-    quantity: req.body.quantity,
-    description: req.body.description,
-    listingDate: req.body.listingDate,
-    likes: req.body.likes,
-    quotation: req.body.quotation,
-    imageLink: req.body.imageLink,
+    // listingName: req.body.listingName,
+    // category: req.body.category,
+    // quantity: req.body.quantity,
+    // description: req.body.description,
+    // listingDate: req.body.listingDate,
+    // likes: req.body.likes,
+    // quotation: req.body.quotation,
+    // imageLink: req.body.imageLink,
   });
 
   item
@@ -29,7 +29,7 @@ exports.createItem = async function (req, res, next) {
     .then((data) => {
       return res.status(200).json({
         message: "Account successfully created",
-        data: { telegramHandle: telegramHandle, account: listingName},
+        data: { telegramHandle: telegramHandle},
       });
     })
     .catch((err) => {
@@ -39,7 +39,6 @@ exports.createItem = async function (req, res, next) {
       });
     });
 };
-
 // exports.updateAccount = async function (req, res, next) {
 //   var account = await Account.findOne({ _id: req.body._id }, function (err) {
 //     if (err) {

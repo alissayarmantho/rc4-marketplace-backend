@@ -6,22 +6,41 @@ const auth = require("../controller/auth");
 const AccountValidator = require("../validator/account.validator");
 const ErrorValidator = require("../validator/error.validator");
 const { route } = require("./account.route");
-
+const Item = require('../models/item.model')
 
 // Display all Item
-router.get(
-    "/displayItems",
+router.get("/displayItems", async(req,res) => {
+      
+      try{
+        const items = await Item.find()
+        res.json(items)
+      } catch(err) {
+        res.send('Error ' + err)
+      }
 
+    }
   );
 
 // Add Item
-router.post(
-    "/addItem",
-    itemController.createItem,
+router.post("/addItem", async(req,res) => {
+  const item = new Item({
+    telegramHandle: req.body.telegramHandle
+  })
+  try {
+    const a1 = await item.save()
+    res.json(item)
+  } catch(err) {
+    res.send('Error ' + err)
+  }
+}
+
+    // itemController.createItem,
 );
 // Delete Item
 
 // Update Item (LTR)
+
+
 
 // router.post(
 //   "/",
