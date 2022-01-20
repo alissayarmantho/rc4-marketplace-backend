@@ -15,7 +15,7 @@ router.get(
   );
 
 // Add Item
-route.post(
+router.post(
     "/addItem",
     itemController.createItem,
 );

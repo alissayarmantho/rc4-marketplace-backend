@@ -18,7 +18,6 @@ exports.createItem = async function (req, res, next) {
     category: req.body.category,
     quantity: req.body.quantity,
     description: req.body.description,
-    listingName: req.body.listingName,
     listingDate: req.body.listingDate,
     likes: req.body.likes,
     quotation: req.body.quotation,
