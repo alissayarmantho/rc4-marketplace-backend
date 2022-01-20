@@ -26,7 +26,7 @@ router.post("/addItem", async(req,res) => {
   })
   try {
     const a1 = await item.save()
-    res.json(item)
+    res.json(a1)
   } catch(err) {
     res.send('Error ' + err)
   }
@@ -38,9 +38,28 @@ router.post("/addItem", async(req,res) => {
 // );
 
 // Delete Item
+router.post("/deleteItem", async(req,res) => {
+  const itemToDelete = await Item.deleteOne( {_id: req.body._id} )
+  
+  res.send('Deleted item ' + req.body._id)
+  
+});
 
-// Update Item (LTR)
+// Update Item 
+router.post("/updateItem", async(req,res) => {
+  updates = {
+    listingName: req.body.listingName ,
+    category: req.body.category ,
+    quantity: req.body.quantity ,
+    description: req.body.description ,       
+    price: req.body.price ,
+    imageLink: req.body.imageLink ,
+  }
+  const itemToUpdate = await Item.updateOne( {_id: req.body._id}, updates)
 
+  res.send('Updated')
+
+})
 
 
 // router.post(
