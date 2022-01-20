@@ -21,9 +21,19 @@ router.get("/displayItems",auth, async(req,res) => {
 
 // Add Item
 router.post("/addItem",auth, async(req,res) => {
+
   const item = new Item({
-    telegramHandle: req.body.telegramHandle
+    telegramHandle: req.body.telegramHandle,
+    listingName: req.body.listingName ,
+    category: req.body.category ,
+    quantity: req.body.quantity ,
+    description: req.body.description , 
+    listingDate: req.body.description,      
+    price: req.body.price ,
+    imageLink: req.body.imageLink ,
   })
+
+  
   try {
     const a1 = await item.save()
     res.json(a1)
