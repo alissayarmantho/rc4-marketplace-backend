@@ -9,7 +9,7 @@ const { route } = require("./account.route");
 const Item = require('../models/item.model')
 
 // Display all Item
-router.get("/displayItems", async(req,res) => {
+router.get("/displayItems",auth, async(req,res) => {
       try{
         const items = await Item.find()
         res.json(items)
@@ -20,7 +20,7 @@ router.get("/displayItems", async(req,res) => {
   );
 
 // Add Item
-router.post("/addItem", async(req,res) => {
+router.post("/addItem",auth, async(req,res) => {
   const item = new Item({
     telegramHandle: req.body.telegramHandle
   })
@@ -40,7 +40,7 @@ router.post("/addItem", async(req,res) => {
 // router.post("/deleteItem", itemController.deleteItem);
 
 // Delete Item
-router.post("/deleteItem", async(req,res) => {
+router.post("/deleteItem", auth, async(req,res) => {
   const itemToDelete = await Item.deleteOne( {_id: req.body._id} )
   
   res.send('Deleted item ' + req.body._id)
@@ -48,7 +48,7 @@ router.post("/deleteItem", async(req,res) => {
 });
 
 // Update Item 
-router.post("/updateItem", async(req,res) => {
+router.post("/updateItem", auth, async(req,res) => {
   updates = {
     listingName: req.body.listingName ,
     category: req.body.category ,
@@ -64,13 +64,13 @@ router.post("/updateItem", async(req,res) => {
 })
 
 // Filter item by category
-router.post("/filterByCategory", async(req, res) => {
+router.post("/filterByCategory", auth, async(req, res) => {
   const filteredItems = await Item.find( {category: req.body.category} ) 
   res.json(filteredItems)
 })
 
 // Profile items 
-router.post("/filterByCategory", async(req, res) => {
+router.post("/myListings", auth, async(req, res) => {
   const filteredItems = await Item.find( {telegramHandle: req.body.telegramHandle} ) 
   res.json(filteredItems)
 })
