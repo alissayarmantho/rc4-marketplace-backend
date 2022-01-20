@@ -10,14 +10,12 @@ const Item = require('../models/item.model')
 
 // Display all Item
 router.get("/displayItems", async(req,res) => {
-      
       try{
         const items = await Item.find()
         res.json(items)
       } catch(err) {
         res.send('Error ' + err)
       }
-
     }
   );
 
@@ -32,10 +30,13 @@ router.post("/addItem", async(req,res) => {
   } catch(err) {
     res.send('Error ' + err)
   }
-}
+});
 
-    // itemController.createItem,
-);
+// 2nd Way 
+// router.post("/addItem", 
+//     itemController.createItem,
+// );
+
 // Delete Item
 
 // Update Item (LTR)
