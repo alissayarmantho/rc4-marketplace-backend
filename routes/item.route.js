@@ -11,59 +11,60 @@ const { route } = require("./account.route");
 // Display all Item
 router.get(
     "/displayItems",
+
   );
 
 // Add Item
 route.post(
     "/addItem",
-    
+    itemController.createItem,
 );
 // Delete Item
 
 // Update Item (LTR)
 
-router.post(
-  "/",
-  AccountValidator.createAccount,
-  ErrorValidator.ifErrors,
-  accountController.createAccount
-);
+// router.post(
+//   "/",
+//   AccountValidator.createAccount,
+//   ErrorValidator.ifErrors,
+//   accountController.createAccount
+// );
 
-router.put(
-  "/",
-  auth,
-  AccountValidator.updateAccount,
-  ErrorValidator.ifErrors,
-  accountController.updateAccount
-);
+// router.put(
+//   "/",
+//   auth,
+//   AccountValidator.updateAccount,
+//   ErrorValidator.ifErrors,
+//   accountController.updateAccount
+// );
 
-router.post(
-  "/change-password",
-  auth,
-  AccountValidator.changePassword,
-  ErrorValidator.ifErrors,
-  accountController.changePassword
-);
+// router.post(
+//   "/change-password",
+//   auth,
+//   AccountValidator.changePassword,
+//   ErrorValidator.ifErrors,
+//   accountController.changePassword
+// );
 
-router.post(
-  "/login",
-  AccountValidator.login,
-  ErrorValidator.ifErrors,
-  accountController.login
-);
+// router.post(
+//   "/login",
+//   AccountValidator.login,
+//   ErrorValidator.ifErrors,
+//   accountController.login
+// );
 
-router.post(
-  "/forget-password-request",
-  AccountValidator.forgetPasswordRequest,
-  ErrorValidator.ifErrors,
-  accountController.forgetPasswordRequest
-);
+// router.post(
+//   "/forget-password-request",
+//   AccountValidator.forgetPasswordRequest,
+//   ErrorValidator.ifErrors,
+//   accountController.forgetPasswordRequest
+// );
 
-router.post(
-  "/forget-password-reset",
-  AccountValidator.forgetPasswordReset,
-  ErrorValidator.ifErrors,
-  accountController.forgetPasswordReset
-);
+// router.post(
+//   "/forget-password-reset",
+//   AccountValidator.forgetPasswordReset,
+//   ErrorValidator.ifErrors,
+//   accountController.forgetPasswordReset
+// );
 
 module.exports = router;
