@@ -37,6 +37,8 @@ router.post("/addItem", async(req,res) => {
 //     itemController.createItem,
 // );
 
+// router.post("/deleteItem", itemController.deleteItem);
+
 // Delete Item
 router.post("/deleteItem", async(req,res) => {
   const itemToDelete = await Item.deleteOne( {_id: req.body._id} )
@@ -61,6 +63,25 @@ router.post("/updateItem", async(req,res) => {
 
 })
 
+// Filter item by category
+router.post("/filterByCategory", async(req, res) => {
+  const filteredItems = await Item.find( {category: req.body.category} ) 
+  res.json(filteredItems)
+})
+
+// Profile items 
+router.post("/filterByCategory", async(req, res) => {
+  const filteredItems = await Item.find( {telegramHandle: req.body.telegramHandle} ) 
+  res.json(filteredItems)
+})
+
+// Filter item by searchbar 
+// router.post("/filterBySearch", async(req,res) => {
+
+//   string searchTerms = req.body.searchTerms
+//   const filteredItems = await Item.find( {listingName: /searchTerms/} )
+//   res.json(filteredItems)
+// })
 
 // router.post(
 //   "/",
