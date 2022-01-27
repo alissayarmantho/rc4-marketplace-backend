@@ -12,5 +12,5 @@ const Item_Schema = new mongoose.Schema({
     price: { type: Number, min : [0.00, "Minimum price: $0.01" ]},
     imageLink: { type: String, default: "" },
 });
-
+``
 module.exports = mongoose.model('Item',Item_Schema)

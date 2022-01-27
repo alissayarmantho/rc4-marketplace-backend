@@ -33,7 +33,7 @@ router.post("/addItem",auth, async(req,res) => {
     imageLink: req.body.imageLink ,
   })
 
-  
+   
   try {
     const a1 = await item.save()
     res.json(a1)
