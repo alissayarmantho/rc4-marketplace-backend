@@ -84,9 +84,9 @@ exports.updateAccount = async function (req, res, next) {
 };
 
 exports.login = async function (req, res, next) {
-  let email = req.body.email;
+  let username = req.body.username;
 
-  var account = await Account.findOne({ email: email }, function (err) {
+  var account = await Account.findOne({ username: username }, function (err) {
     if (err) {
       return res.status(500).json({
         message: "Something went wrong! Error: " + err.message,
